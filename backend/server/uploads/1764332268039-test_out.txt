@@ -1,0 +1,4 @@
+Hello Huffman! This is a test file to verify compression.
+AAAAABBBBBCCCCC
+1234567890
+End of file.

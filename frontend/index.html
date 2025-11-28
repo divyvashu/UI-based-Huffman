@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huffman Compressor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Huffman<span class="highlight">Pro</span></h1>
+            <p>Lossless Compression & Decompression</p>
+        </header>
+
+        <div class="card glass">
+            <div class="mode-switch">
+                <button id="btn-compress" class="mode-btn active">Compress</button>
+                <button id="btn-decompress" class="mode-btn">Decompress</button>
+            </div>
+
+            <div class="upload-zone" id="drop-zone">
+                <div class="icon-container">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                </div>
+                <h3>Drag & Drop your file here</h3>
+                <p>or <span class="browse-btn">browse files</span></p>
+                <input type="file" id="file-input" hidden>
+            </div>
+
+            <div class="file-info" id="file-info" style="display: none;">
+                <div class="file-details">
+                    <span class="file-name" id="file-name">example.txt</span>
+                    <span class="file-size" id="file-size">1.2 MB</span>
+                </div>
+                <button class="remove-btn" id="remove-file">✕</button>
+            </div>
+
+            <button id="action-btn" class="action-btn" disabled>Compress File</button>
+        </div>
+
+        <div class="results-card glass" id="results-card" style="display: none;">
+            <h2>Processing Complete!</h2>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label" id="label-1">Original Size</span>
+                    <span class="stat-value" id="val-1">0 B</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label" id="label-2">Compressed Size</span>
+                    <span class="stat-value" id="val-2">0 B</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Ratio</span>
+                    <span class="stat-value highlight-text" id="stat-ratio">0%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Entropy</span>
+                    <span class="stat-value" id="stat-entropy">0.00</span>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <a href="#" id="download-link" class="download-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download Result
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
