@@ -80,9 +80,12 @@ actionBtn.addEventListener('click', async () => {
     formData.append('file', currentFile);
 
     // Use relative paths for API
+    const BASE_URL = "https://huffman.up.railway.app";
+    
     const endpoint = mode === 'compress'
-        ? '/api/compress'
-        : '/api/decompress';
+        ? `${BASE_URL}/api/compress`
+        : `${BASE_URL}/api/decompress`;
+
 
     try {
         const response = await fetch(endpoint, {
@@ -140,7 +143,8 @@ function showResults(data) {
 
     const downloadLink = document.getElementById('download-link');
     // Use relative path for download
-    downloadLink.href = data.downloadUrl;
+    downloadLink.href = `${BASE_URL}${data.downloadUrl}`;
+
 }
 
 function formatBytes(bytes, decimals = 2) {
