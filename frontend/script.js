@@ -8,6 +8,7 @@ const actionBtn = document.getElementById('action-btn');
 const btnCompress = document.getElementById('btn-compress');
 const btnDecompress = document.getElementById('btn-decompress');
 const resultsCard = document.getElementById('results-card');
+const BASE_URL = "https://huffman.up.railway.app";
 
 let currentFile = null;
 let mode = 'compress'; // 'compress' or 'decompress'
@@ -80,7 +81,6 @@ actionBtn.addEventListener('click', async () => {
     formData.append('file', currentFile);
 
     // Use relative paths for API
-    const BASE_URL = "https://huffman.up.railway.app";
     
     const endpoint = mode === 'compress'
         ? `${BASE_URL}/api/compress`
