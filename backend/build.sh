@@ -1,12 +1,10 @@
 #!/bin/bash
+set -e
 
-echo "Compiling Huffman C binary..."
+echo "Building Huffman Linux binary..."
 
 cd c
-gcc huffman.c -o huffman.exe
-cd ..
-
-echo "Installing Node dependencies..."
-npm install
+gcc huffman.c -o huffman       # Linux binary – NOT .exe
+chmod +x huffman               # Make it executable
 
 echo "Build complete."
