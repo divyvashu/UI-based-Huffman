@@ -4,7 +4,7 @@ set -e
 echo "Building Huffman Linux binary..."
 
 cd c
-gcc huffman.c -o huffman       # Linux binary – NOT .exe
-chmod +x huffman               # Make it executable
+gcc huffman.c -o huffman -lm
+chmod +x huffman
 
-echo "Build complete."
+echo "Huffman build complete."
