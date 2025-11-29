@@ -34,7 +34,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Path to C executable
-const EXE_PATH = path.resolve(__dirname, '../c/huffman.exe');
+const EXE_PATH = path.resolve(__dirname, '../c/huffman');
 
 // Helper to run C program
 const runHuffman = (command, inputFile, outputFile) => {
